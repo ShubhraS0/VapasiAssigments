@@ -7,16 +7,18 @@ Override the method created in parent class and print the number of lights in ro
 
 public class HomeBase {
     String name = "Home";
-   // int numOfRooms;
-    int lightsPerRoom = 4;
+    int numOfRooms = 1;
+    int lightsPerRoom = 4;     //value fixed for all Subclasses
     void noOfLights() {
-        System.out.println("Total lights in " + name + "= " + lightsPerRoom);
+        System.out.println("Total lights in " + name + "= " + numOfRooms * lightsPerRoom);
     }
 }
 
 class MansionHome extends HomeBase {
     String name = "Mansion";
-    int numOfRooms = 20;
+    MansionHome(int numOfRooms){
+       this.numOfRooms = numOfRooms;
+    }
     void noOfLights() {
         System.out.println("Total lights in " + name + "= " + numOfRooms * lightsPerRoom);
     }
@@ -24,7 +26,9 @@ class MansionHome extends HomeBase {
 
 class IndependentHome extends HomeBase {
     String name = "Independent";
-    int numOfRooms = 3;
+    IndependentHome(int numOfRooms){
+        this.numOfRooms = numOfRooms;
+    }
     void noOfLights() {
         System.out.println("Total lights in " + name + "= " + numOfRooms * lightsPerRoom);
     }
@@ -32,27 +36,29 @@ class IndependentHome extends HomeBase {
 
 class DuplexHome extends HomeBase {
     String name = "Duplex";
-    int numOfRooms = 4;
+    DuplexHome(int numOfRooms){
+        this.numOfRooms = numOfRooms;
+    }
     void noOfLights() {
         System.out.println("Total lights in " + name + "= " + numOfRooms * lightsPerRoom);
     }
 }
-
 class HomeBaseTest {
     public static void main(String[] args) {
+        //HomeBase
+        HomeBase myHome = new HomeBase();
+        myHome.noOfLights();
 
-     //   HomeBase myHome = new MansionHome();
-     //   myHome.noOfLights();
         // Mansion
-        MansionHome mansionHome = new MansionHome();
+        MansionHome mansionHome = new MansionHome(3);
         mansionHome.noOfLights();
 
         // Independent room
-        IndependentHome independentHome = new IndependentHome();
+        IndependentHome independentHome = new IndependentHome(4);
         independentHome.noOfLights();
 
         // Duplex room
-        DuplexHome duplexHome = new DuplexHome();
+        DuplexHome duplexHome = new DuplexHome(5);
         duplexHome.noOfLights();
     }
 }
