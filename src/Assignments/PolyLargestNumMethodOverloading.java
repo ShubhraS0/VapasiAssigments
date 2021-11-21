@@ -11,12 +11,12 @@ public class PolyLargestNumMethodOverloading {
 //        int a = sc.nextInt();
 //        System.out.println("Enter second number : ");
 //        int b = sc.nextInt();
-        FindLargest(3, 4);
-        FindLargest(6,9,12);
+        findLargest(30, 4);
+        findLargest(6,9,12);
     }
 
     //function to find largest of 3 given numbers
-    static void FindLargest(int a, int b, int c) {
+    static void findLargest(int a, int b, int c) {
         System.out.println("Comparing for largest between " + a + ',' + b + "," + c);
         if (a > b && a > c) {
             System.out.println(a + " is largest");
@@ -28,7 +28,7 @@ public class PolyLargestNumMethodOverloading {
     }
 
     //function to find largest of 2 given numbers
-    static void FindLargest(int a, int b) {
+    static void findLargest(int a, int b) {
         System.out.println("Comparing for largest between " + a + "," +b);
         if (a > b) {
             System.out.println(a + " is largest");
